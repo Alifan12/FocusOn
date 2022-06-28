@@ -14,7 +14,13 @@
         android:theme="@style/Theme.FocusOn"
         tools:targetApi="31">
         <activity
+            android:name=".TugasDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TugasListActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
