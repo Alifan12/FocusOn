@@ -20,7 +20,13 @@
             android:name=".FailedActivity"
             android:exported="false" />
         <activity
+            android:name=".TugasDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TugasListActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

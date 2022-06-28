@@ -15,12 +15,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openLoginActivity(View view) {
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, TugasListActivity.class);
         startActivity(intent);
     }
 
     public void openRegisterActivity(View view) {
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, TugasListActivity.class);
         startActivity(intent);
     }
 }
