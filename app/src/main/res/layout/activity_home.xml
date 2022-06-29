@@ -32,7 +32,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:text="Hello\nNorma Sari"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:fontFamily="@font/inter_bold"
             android:textColor="@color/black"/>
     </LinearLayout>

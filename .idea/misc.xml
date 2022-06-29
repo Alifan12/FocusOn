@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Clone/FocusOn/app/src/main/res/layout/activity_failed.xml" value="0.20416666666666666" />
+        <entry key="..\:/Clone/FocusOn/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Clone/FocusOn/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Clone/FocusOn/app/src/main/res/layout/activity_reward_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Clone/FocusOn/app/src/main/res/layout/activity_sukses.xml" value="0.20416666666666666" />
+        <entry key="..\:/Clone/FocusOn/app/src/main/res/layout/activity_tugas_list.xml" value="0.20416666666666666" />
         <entry key="..\:/Kuliah/Pemrograman Perangkat Bergerak/FocusOn/app/src/main/res/drawable/bg_tugas_item.xml" value="0.1" />
         <entry key="..\:/Kuliah/Pemrograman Perangkat Bergerak/FocusOn/app/src/main/res/drawable/btn_mulai.xml" value="0.1" />
         <entry key="..\:/Kuliah/Pemrograman Perangkat Bergerak/FocusOn/app/src/main/res/drawable/button_add.xml" value="0.1" />
