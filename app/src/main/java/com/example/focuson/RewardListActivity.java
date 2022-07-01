@@ -41,7 +41,7 @@ public class RewardListActivity extends AppCompatActivity {
         images.add(R.drawable.reward4);
         images.add(R.drawable.tambah_lainnya);
 
-        adapter = new Adapter(this, titles, images);
+        adapter = new RewardListAdapter(this, titles, images);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         rewardList.setLayoutManager(gridLayoutManager);

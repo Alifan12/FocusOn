@@ -14,14 +14,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class RewardListAdapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class RewardListAdapter extends RecyclerView.Adapter<RewardListAdapter.ViewHolder> {
 
     List<String>titles;
     List<Integer>images;
     Context context;
     LayoutInflater inflater;
 
-    public Adapter(Context ctx, List<String> titles, List<Integer> images){
+    public RewardListAdapter(Context ctx, List<String> titles, List<Integer> images){
         this.titles = titles;
         this.images = images;
         this.inflater = LayoutInflater.from(ctx);
@@ -56,6 +56,5 @@ public class RewardListAdapter extends RecyclerView.Adapter<Adapter.ViewHolder> 
             images = itemView.findViewById(R.id.iv_hadiah);
         }
     }
-
 }
 
