@@ -32,7 +32,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="22dp"
             android:fontFamily="@font/inter_bold"
-            android:text="Daftar"
+            android:text="Tugas"
             android:textColor="@color/black"
             android:textSize="20sp" />
 

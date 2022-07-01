@@ -32,7 +32,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="22dp"
             android:fontFamily="@font/inter_bold"
-            android:text="Daftar"
+            android:text="Tugas"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -52,13 +52,13 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="309dp"
-            android:layout_height="195dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
             android:layout_weight="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/reg_nav"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:src="@drawable/gambartugas" />
 
         <TextView
             android:id="@+id/textView"
