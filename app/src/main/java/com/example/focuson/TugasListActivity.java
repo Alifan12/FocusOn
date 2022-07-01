@@ -39,6 +39,6 @@ public class TugasListActivity extends AppCompatActivity {
 
 
     public void backHomeActivity(View view) {
-
+        TugasListActivity.this.finish();
     }
 }
