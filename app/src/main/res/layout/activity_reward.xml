@@ -29,7 +29,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/Text1"
+        android:layout_centerHorizontal="true"
         android:layout_margin="5dp"
+        android:layout_marginTop="-68dp"
         android:alignmentMode="alignMargins"
         android:columnCount="2"
         android:columnOrderPreserved="false"
@@ -50,12 +52,14 @@
                 android:padding="10dp">
 
                 <ImageView
+                    android:id="@+id/photo_reward"
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:onClick="backMainActivity"
                     android:src="@drawable/permen" />
 
                 <TextView
+                    android:id="@+id/nama_reward"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/inter_bold"
@@ -90,10 +94,10 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/inter_bold"
                     android:text="Sepatu"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/inter_bold"
                     android:textSize="16sp"></TextView>
 
             </LinearLayout>
@@ -115,16 +119,16 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="140dp"
-                    android:src="@drawable/baju"
-                    android:layout_gravity="center"></ImageView>
+                    android:layout_gravity="center"
+                    android:src="@drawable/baju"></ImageView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/inter_bold"
                     android:text="Baju"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/inter_bold"
                     android:textSize="16sp"></TextView>
 
             </LinearLayout>

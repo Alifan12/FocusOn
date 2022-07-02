@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.ImageView;
 
+import com.example.focuson.database.RewardModel;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,12 +19,16 @@ public class RewardListActivity extends AppCompatActivity {
     RecyclerView rewardList;
     List<String> titles;
     List<Integer> images;
+    ArrayList<RewardModel> rewardArray;
     RewardListAdapter adapter;
+    AdapterAddReward adapterAddReward;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        addData();
 
         rewardList = findViewById(R.id.rv_rewardList);
 
@@ -42,9 +48,15 @@ public class RewardListActivity extends AppCompatActivity {
         images.add(R.drawable.tambah_lainnya);
 
         adapter = new RewardListAdapter(this, titles, images);
+        adapterAddReward = new AdapterAddReward(rewardArray);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         rewardList.setLayoutManager(gridLayoutManager);
         rewardList.setAdapter(adapter);
+        rewardList.setAdapter(adapterAddReward);
+    }
+
+    void addData() {
+        rewardArray = new ArrayList<>();
     }
 }
