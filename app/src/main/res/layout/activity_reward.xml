@@ -137,9 +137,9 @@
         android:id="@+id/btn_add"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/ic_add"
-        android:layout_marginTop="650dp"
         android:layout_marginLeft="330dp"
-        android:onClick="openListReward"/>
+        android:layout_marginTop="650dp"
+        android:onClick="openListReward"
+        android:src="@drawable/ic_add" />
 
 </RelativeLayout>

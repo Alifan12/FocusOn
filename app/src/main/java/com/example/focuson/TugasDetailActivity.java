@@ -77,6 +77,7 @@ public class TugasDetailActivity extends AppCompatActivity {
         this.text_view_countdown.setText(timeLeftFormatted);
     }
 
-    public void backHomeActivity(View view) {
+    public void backHomeActivity(View view) {TugasDetailActivity.this.finish();
     }
+
 }
