@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import androidx.lifecycle.LiveData;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class TugasRepository {
     private TugasDAO mTugasDAO;
@@ -19,6 +20,15 @@ public class TugasRepository {
 
     LiveData<List<Tugas>> getAllTugas() {
         return mAllTugas;
+    }
+
+    public Tugas getTugas(int id) {
+        try {
+            return new getTugasAsyncTask(mTugasDAO).execute(id).get();
+        } catch (ExecutionException | InterruptedException ei) {
+            ei.printStackTrace();
+            return null;
+        }
     }
 
     public void insert(Tugas tugas) {
@@ -52,6 +62,22 @@ public class TugasRepository {
         }
     }
 
+    private static class getTugasAsyncTask extends AsyncTask <Integer, Void, Tugas> {
+        private TugasDAO mAsyncTaskDAO;
+        private Tugas tugas;
+        getTugasAsyncTask(TugasDAO dao) {mAsyncTaskDAO = dao;}
+
+        @Override
+        protected Tugas doInBackground(Integer... id){
+            this.tugas = mAsyncTaskDAO.getTugas(id[0]);
+            return this.tugas;
+        }
+
+        @Override
+        protected void onPostExecute(Tugas tugas) {
+        }
+    }
+
     /**
      * Delete all words from the database (does not delete the table)
      */
@@ -67,6 +93,7 @@ public class TugasRepository {
             mAsyncTaskDao.deleteAll();
             return null;
         }
+
     }
 
     /**

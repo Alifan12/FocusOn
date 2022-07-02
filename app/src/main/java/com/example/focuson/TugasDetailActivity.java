@@ -1,7 +1,9 @@
 package com.example.focuson;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -9,16 +11,23 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.focuson.database.Tugas;
+import com.example.focuson.database.TugasViewModel;
+
 import java.util.Locale;
 
 public class TugasDetailActivity extends AppCompatActivity {
-    private static final long START_IN_MILLISECOND = 600000;
+    private static TugasViewModel tugasViewModel;
+    private long START_IN_MILLISECOND;
     private TextView text_view_countdown;
     private Button button_abort;
+    private Intent prevIntent;
+    private int idTugas;
+    private Tugas data;
 
     private CountDownTimer countDownTimer;
 
-    private long time_left =  START_IN_MILLISECOND;
+    private long time_left;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +35,14 @@ public class TugasDetailActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_tugas_detail);
+
+        this.prevIntent = getIntent();
+        this.idTugas = prevIntent.getIntExtra("id", 1);
+
+        this.tugasViewModel = new ViewModelProvider(this).get(TugasViewModel.class);
+        this.data = tugasViewModel.getTugas(idTugas);
+        this.START_IN_MILLISECOND = data.getDuration()*1000;
+        this.time_left = START_IN_MILLISECOND;
 
         this.countDownTimer = new CountDownTimer(time_left, 1000) {
             @Override
@@ -39,6 +56,7 @@ public class TugasDetailActivity extends AppCompatActivity {
 
             }
         }.start();
+
         this.text_view_countdown = findViewById(R.id.textViewCountdown);
         this.button_abort = findViewById(R.id.selesaiButton);
 
