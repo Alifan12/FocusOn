@@ -26,4 +26,10 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, TugasListActivity.class);
         startActivity(intent);
     }
+
+    public void Out(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }

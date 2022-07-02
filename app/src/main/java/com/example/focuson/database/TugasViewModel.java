@@ -22,6 +22,10 @@ public class TugasViewModel extends AndroidViewModel {
         return mAllTugas;
     }
 
+    public Tugas getTugas(int id) {
+        return mRepository.getTugas(id);
+    }
+
     public void insert(Tugas tugas) {
         mRepository.insert(tugas);
     }

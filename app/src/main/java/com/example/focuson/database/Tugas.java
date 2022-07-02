@@ -33,7 +33,6 @@ public class Tugas {
     @ColumnInfo(name = "reward_id")
     public int reward_id;
 
-
     @Ignore
     public Tugas(Integer id,
                  String nama,
