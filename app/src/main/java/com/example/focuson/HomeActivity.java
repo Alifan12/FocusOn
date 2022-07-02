@@ -18,7 +18,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void openListReward(View view) {
-        Intent intent = new Intent(this, RewardListActivity.class);
+        Intent intent = new Intent(this, RewardActivity.class);
         startActivity(intent);
     }
 

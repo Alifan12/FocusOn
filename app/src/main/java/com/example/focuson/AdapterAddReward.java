@@ -23,14 +23,14 @@ public class AdapterAddReward extends RecyclerView.Adapter<AdapterAddReward.AddR
 
     @NonNull
     @Override
-    public AddRewardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdapterAddReward.AddRewardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.activity_reward, parent, false);
         return new AddRewardViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AddRewardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterAddReward.AddRewardViewHolder holder, int position) {
 
         holder.pictReward.setImageResource(dataList.get(position).getPhotoReward());
         holder.nameReward.setText(dataList.get(position).getNamaReward());
