@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.focuson.database.Reward;
 
@@ -19,10 +22,12 @@ public class RewardListActivity extends AppCompatActivity {
     RewardListAdapter adapter;
     AdapterAddReward adapterAddReward;
 
+    private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_reward_list_add);
         
         addData();
 
@@ -50,9 +55,22 @@ public class RewardListActivity extends AppCompatActivity {
         rewardList.setLayoutManager(gridLayoutManager);
         rewardList.setAdapter(adapter);
         rewardList.setAdapter(adapterAddReward);
+
+        button = (Button) findViewById(R.id.btn_kembali);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                backButton();
+            }
+        });
     }
 
     void addData() {
         rewardArray = new ArrayList<>();
+    }
+
+    void backButton(){
+        Intent intent = new Intent(RewardListActivity.this, HomeActivity.class);
+        startActivity(intent);
     }
 }

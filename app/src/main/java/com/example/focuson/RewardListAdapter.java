@@ -16,9 +16,8 @@ import java.util.List;
 
 public class RewardListAdapter extends RecyclerView.Adapter<RewardListAdapter.ViewHolder> {
 
-    List<String>titles;
-    List<Integer>images;
-    Context context;
+    List<String> titles;
+    List<Integer> images;
     LayoutInflater inflater;
 
     public RewardListAdapter(Context ctx, List<String> titles, List<Integer> images){
