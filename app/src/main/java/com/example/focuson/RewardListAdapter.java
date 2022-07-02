@@ -56,5 +56,6 @@ public class RewardListAdapter extends RecyclerView.Adapter<RewardListAdapter.Vi
             images = itemView.findViewById(R.id.iv_hadiah);
         }
     }
+
 }
 

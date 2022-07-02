@@ -1,66 +1,55 @@
 package com.example.focuson.database;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
-import java.sql.Time;
+import java.sql.Date;
 
 @Entity(tableName = "tugas_table")
 public class Tugas {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "id")
-    private Integer id;
+    public Integer id;
 
     @ColumnInfo(name = "name")
-    private String nama;
+    public String nama;
 
     @ColumnInfo(name = "duration")
-    private Integer duration;
+    public Integer duration;
 
     @ColumnInfo(name = "is_done")
-    private Boolean is_done;
+    public Boolean is_done;
 
     @ColumnInfo(name = "time_start")
-    private Time time_start;
+    public Date time_start;
 
     @ColumnInfo(name = "time_end")
-    private Time time_end;
+    public Date time_end;
 
     @ColumnInfo(name = "reward_id")
-    private int reward_id;
+    public int reward_id;
 
 
-    public Tugas(@NonNull  Integer id,
-                 @NonNull String nama,
-                 @NonNull Integer duration,
-                 @NonNull Boolean is_done,
-                 @NonNull Time time_start,
-                 Time time_end,
-                 int reward_id) {
-        this.id = id;
-        this.nama = nama;
-        this.duration = duration;
-        this.is_done = is_done;
-        this.time_start = time_start;
-        this.time_end = time_end;
-        this.reward_id = reward_id;
+    @Ignore
+    public Tugas(Integer id,
+                 String nama,
+                 Integer duration
+                 ) {
+        this.setId(id);
+        this.setNama(nama);
+        this.setDuration(duration);
+        this.setIsDone(Boolean.FALSE);
     }
 
-    public Tugas(@NonNull String nama,
-                 @NonNull Integer duration,
-                 @NonNull Boolean is_done,
-                 @NonNull Time time_start,
-                 Time time_end,
-                 int reward_id) {
-        this.nama = nama;
-        this.duration = duration;
-        this.is_done = is_done;
-        this.time_start = time_start;
-        this.time_end = time_end;
-        this.reward_id = reward_id;
+    public Tugas(String nama,
+                 Integer duration) {
+        this.setNama(nama);
+        this.setDuration(duration);
+        this.setIsDone(Boolean.FALSE);
     }
 
     public String getNama() {
@@ -71,7 +60,7 @@ public class Tugas {
         this.nama = nama;
     }
 
-    public int getDuration() {
+    public Integer getDuration() {
         return duration;
     }
 
@@ -79,35 +68,44 @@ public class Tugas {
         this.duration = duration;
     }
 
-    public boolean getIsDone() {
+    public Boolean getIsDone() {
         return this.is_done;
     }
 
-    public void setDuration(boolean is_done) {
+    public void setIsDone(boolean is_done) {
         this.is_done = is_done;
     }
 
-    public Time getTimeStart() {
+    public Date getTimeStart() {
         return this.time_start;
     }
 
-    public void setTimeStart(Time time_start) {
+    public void setTimeStart(Date time_start) {
         this.time_start = time_start;
     }
 
-    public Time getTimeEnd() {
+    public Date getTimeEnd() {
         return this.time_end;
     }
 
-    public void setTimeEnd(Time time_end) {
+    public void setTimeEnd(Date time_end) {
         this.time_end = time_end;
     }
 
-    public int getRewardId() {
+    public Integer getRewardId() {
         return this.reward_id;
     }
 
     public void setRewardId(int reward_id) {
         this.reward_id = reward_id;
+    }
+
+    @NonNull
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(@NonNull Integer id) {
+        this.id = id;
     }
 }

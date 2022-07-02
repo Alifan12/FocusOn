@@ -11,15 +11,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.focuson.database.Tugas;
+
 import java.util.List;
 
 public class AdapterTugas  extends RecyclerView.Adapter<AdapterTugas.HolderData>{
-    List<String> listData;
+    List<Tugas> listData;
     LayoutInflater layoutInflater;
     Context context;
 
-    public AdapterTugas(Context context, List<String> listData) {
-        this.listData = listData;
+    public AdapterTugas(Context context) {
         this.layoutInflater = LayoutInflater.from(context);
         this.context = context;
     }
@@ -33,12 +34,13 @@ public class AdapterTugas  extends RecyclerView.Adapter<AdapterTugas.HolderData>
 
     @Override
     public void onBindViewHolder(@NonNull HolderData holder, int position) {
-        holder.textView.setText(listData.get(position));
+        holder.namaTugasView.setText(listData.get(position).getNama());
+        holder.durasiTugas.setText(listData.get(position).getDuration().toString());
         holder.btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, TugasDetailActivity.class);
-                intent.putExtra("id", 1);
+                intent.putExtra("id", listData.get(holder.getAdapterPosition()).getId());
                 context.startActivity(intent);
             }
         });
@@ -46,18 +48,27 @@ public class AdapterTugas  extends RecyclerView.Adapter<AdapterTugas.HolderData>
 
     @Override
     public int getItemCount() {
-        return this.listData.size();
+        if (listData != null)
+            return listData.size();
+        else return 0;
+    }
+
+    void setTugas(List<Tugas> words) {
+        listData = words;
+        notifyDataSetChanged();
     }
 
     public class HolderData extends RecyclerView.ViewHolder{
-        TextView textView;
+        TextView namaTugasView;
+        TextView durasiTugas;
         Button btn;
+
 
         public HolderData(@NonNull View itemView) {
             super(itemView);
 
-            textView = itemView.findViewById(R.id.namaTugas);
-
+            namaTugasView = itemView.findViewById(R.id.namaTugas);
+            durasiTugas = itemView.findViewById(R.id.durasiTugas);
             btn = itemView.findViewById(R.id.tombolTugas);
         }
     }

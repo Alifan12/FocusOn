@@ -1,6 +1,7 @@
 package com.example.focuson;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -8,14 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.focuson.database.TugasViewModel;
 
 public class TugasListActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
-    AdapterTugas tugasAdapter;
-    List<String> listData;
+    private static TugasViewModel tugasViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +25,14 @@ public class TugasListActivity extends AppCompatActivity {
 
 
         recyclerView = findViewById(R.id.rvTugas);
-        listData = new ArrayList<>();
-        for (int i = 0; i < 15; i++) {
-            listData.add("tugas ke " + i);
-        }
+        final AdapterTugas adapter = new AdapterTugas(this);
+        recyclerView.setAdapter(adapter);
         linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
-        tugasAdapter = new AdapterTugas(this, listData);
-        recyclerView.setAdapter(tugasAdapter);
-        tugasAdapter.notifyDataSetChanged();
+        tugasViewModel = new ViewModelProvider(this).get(TugasViewModel.class);
+        tugasViewModel.getAllTugas().observe(this, tugas -> {
+            adapter.setTugas(tugas);
+        });
     }
 
 

@@ -17,7 +17,7 @@
             android:name=".RewardSuksesActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".RewardListActivity"
             android:exported="false" />
         <activity
             android:name=".SuksesActivity"
