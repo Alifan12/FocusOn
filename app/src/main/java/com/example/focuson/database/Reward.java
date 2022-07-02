@@ -1,11 +1,11 @@
 package com.example.focuson.database;
 
-public class RewardModel {
+public class Reward {
 
     private int photoReward;
     private String namaReward;
 
-    public RewardModel(int photoReward, String namaReward){
+    public Reward(int photoReward, String namaReward){
         this.setPhotoReward(photoReward);
         this.setNamaReward(namaReward);
     }

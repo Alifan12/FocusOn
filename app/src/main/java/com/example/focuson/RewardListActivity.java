@@ -4,13 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Adapter;
-import android.widget.ImageView;
 
-import com.example.focuson.database.RewardModel;
+import com.example.focuson.database.Reward;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +15,7 @@ public class RewardListActivity extends AppCompatActivity {
     RecyclerView rewardList;
     List<String> titles;
     List<Integer> images;
-    ArrayList<RewardModel> rewardArray;
+    ArrayList<Reward> rewardArray;
     RewardListAdapter adapter;
     AdapterAddReward adapterAddReward;
 

@@ -9,15 +9,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.focuson.database.RewardModel;
+import com.example.focuson.database.Reward;
 
 import java.util.ArrayList;
 
 public class AdapterAddReward extends RecyclerView.Adapter<AdapterAddReward.AddRewardViewHolder> {
 
-    private ArrayList<RewardModel> dataList;
+    private ArrayList<Reward> dataList;
 
-    public AdapterAddReward(ArrayList<RewardModel> dataList){
+    public AdapterAddReward(ArrayList<Reward> dataList){
         this.dataList = dataList;
     }
 
