@@ -5,8 +5,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 
 import com.example.focuson.database.Reward;
 
@@ -22,7 +24,9 @@ public class RewardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reward_list_add);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getSupportActionBar().hide();
+        setContentView(R.layout.activity_add_reward);
 
         addData();
 
@@ -39,8 +43,15 @@ public class RewardActivity extends AppCompatActivity {
     void addData() {
         rewardArray = new ArrayList<>();
         rewardArray.add(new Reward(R.drawable.sepatu, "Sepatu"));
+        rewardArray.add(new Reward(R.drawable.permen, "Permen"));
+        rewardArray.add(new Reward(R.drawable.baju, "Baju"));
     }
 
     public void backHomeActivity(View view) {RewardActivity.this.finish();
+    }
+
+    public void openListReward(View view) {
+        Intent intent = new Intent(this, RewardListActivity.class);
+        startActivity(intent);
     }
 }
