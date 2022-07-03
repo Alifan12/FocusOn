@@ -10,10 +10,11 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {Tugas.class}, version = 1, exportSchema = false)
+@Database(entities = {Tugas.class, Reward.class}, version = 2, exportSchema = false)
 @TypeConverters({DateConverters.class})
 public abstract class FocusOnRoomDatabase extends RoomDatabase {
     public abstract TugasDAO tugasDao();
+    public abstract RewardDAO rewardDAO();
 
     private static FocusOnRoomDatabase INSTANCE;
 
@@ -48,21 +49,21 @@ public abstract class FocusOnRoomDatabase extends RoomDatabase {
 
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
 
-        private final TugasDAO mDao;
+        private final TugasDAO mTugasDao;
         private static String [] namaTugas = {"Tugas Menggambar", "Menonton TV", "Tugas Mewarnai", "Mengikat Sepatu"};
         private static Integer [] durasi = {1800, 600, 1800, 600};
 
         PopulateDbAsync(FocusOnRoomDatabase db) {
-            mDao = db.tugasDao();
+            mTugasDao = db.tugasDao();
         }
 
         @Override
         protected Void doInBackground(final Void... params) {
 
-            if (mDao.getTugas(0) == null) {
+            if (mTugasDao.getTugas(0) == null) {
                 for (int i = 0; i < namaTugas.length; i++) {
                     Tugas tugas = new Tugas(namaTugas[i], durasi[i]);
-                    mDao.insert(tugas);
+                    mTugasDao.insert(tugas);
                 }
             }
             return null;
