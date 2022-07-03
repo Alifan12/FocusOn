@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary">
+
+    <ImageView
+        android:id="@+id/iv_backTambahTugas"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="10sp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/tv_judulTambahTugas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/iv_backTambahTugas"
+        android:layout_toRightOf="@id/imageView4"
+        android:text="Tambah Tugas"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="20dp" />
+
+    <TextView
+        android:id="@+id/tv_inputJudulTugas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_judulTambahTugas"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="30dp"
+        android:text="Nama Tugas"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_namaTugas"
+        android:layout_width="302dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv_judulTambahTugas"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="50dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan nama tugas" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_inputWaktuTugas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_judulTambahTugas"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="130dp"
+        android:text="Waktu Tugas"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_waktuTugas"
+        android:layout_width="302dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv_judulTambahTugas"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="150dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan waktu tugas" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_addTugas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_judulTambahTugas"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="169dp"
+        android:layout_weight="1"
+        android:text="Tambah" />
+
+
+</RelativeLayout>
