@@ -12,49 +12,50 @@ import android.widget.Adapter;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.focuson.database.Reward;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class RewardListAdapter extends RecyclerView.Adapter<RewardListAdapter.ViewHolder> {
+public class RewardListAdapter extends RecyclerView.Adapter<RewardListAdapter.RewardListViewHolder> {
 
-    List<String> titles;
-    List<Integer> images;
-    LayoutInflater inflater;
+    private ArrayList<Reward> dataList;
 
-    public RewardListAdapter(Context ctx, List<String> titles, List<Integer> images){
-        this.titles = titles;
-        this.images = images;
-        this.inflater = LayoutInflater.from(ctx);
+    public RewardListAdapter(ArrayList<Reward> dataList){
+        this.dataList = dataList;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.activity_reward_list, parent, false);
-        return new ViewHolder(view);
+    public RewardListAdapter.RewardListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View view = layoutInflater.inflate(R.layout.activity_reward, parent, false);
+        return new RewardListViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.title.setText(titles.get(position));
-        holder.gridIcon.setImageResource(images.get(position));
+    public void onBindViewHolder(@NonNull RewardListAdapter.RewardListViewHolder holder, int position) {
+        holder.pictReward.setImageResource(dataList.get(position).getImage());
+        holder.nameReward.setText(dataList.get(position).getName());
     }
 
     @Override
     public int getItemCount() {
-        return titles.size();
+        return (dataList != null) ? dataList.size() : 0;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title;
-        ImageView gridIcon;
+    public class RewardListViewHolder extends RecyclerView.ViewHolder{
 
-        public ViewHolder(@NonNull View itemView) {
+        private ImageView pictReward;
+        private TextView nameReward;
+
+        public RewardListViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.tv_hadiah);
-            images = itemView.findViewById(R.id.iv_hadiah);
+
+            pictReward = itemView.findViewById(R.id.photo_reward);
+            nameReward = itemView.findViewById(R.id.nama_reward);
         }
     }
-
 }
 
