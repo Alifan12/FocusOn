@@ -60,12 +60,12 @@ public class TugasDetailActivity extends AppCompatActivity {
         this.text_view_countdown = findViewById(R.id.textViewCountdown);
         this.button_abort = findViewById(R.id.selesaiButton);
 
-        this.button_abort.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                TugasDetailActivity.this.finish();
-            }
-        });
+//        this.button_abort.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                TugasDetailActivity.this.finish();
+//            }
+//        });
 
     }
 
@@ -77,7 +77,15 @@ public class TugasDetailActivity extends AppCompatActivity {
         this.text_view_countdown.setText(timeLeftFormatted);
     }
 
-    public void backHomeActivity(View view) {TugasDetailActivity.this.finish();
-    }
+    public void backHomeActivity(View view) {TugasDetailActivity.this.finish();}
 
+    public void openSuksesTugas(View view) {
+        if(time_left < 0){
+            prevIntent = new Intent(this, SuksesActivity.class);
+            startActivity(prevIntent);
+        }else if(time_left >= 0){
+            prevIntent = new Intent(this, FailedActivity.class);
+            startActivity(prevIntent);
+        }
+    }
 }
