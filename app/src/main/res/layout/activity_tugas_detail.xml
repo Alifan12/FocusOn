@@ -7,7 +7,10 @@
     android:background="@color/primary"
     tools:context=".TugasDetailActivity">
 
+
     <LinearLayout
+
+
         android:id="@+id/reg_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,6 +18,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+
+
 
         <ImageView
             android:id="@+id/img_back"
@@ -35,6 +41,17 @@
             android:text="Tugas"
             android:textColor="@color/black"
             android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="25dp"
+            android:text="Petunjuk"
+            android:textSize="10dp"
+            android:background="@drawable/button_shape"/>
+
 
     </LinearLayout>
 

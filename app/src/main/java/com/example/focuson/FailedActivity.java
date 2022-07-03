@@ -21,4 +21,9 @@ public class FailedActivity extends AppCompatActivity {
         Intent intent = new Intent(this, TugasListActivity.class);
         startActivity(intent);
     }
+
+    public void Coba(View view) {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
 }

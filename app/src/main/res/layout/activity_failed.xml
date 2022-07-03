@@ -68,10 +68,9 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="110dp"
         android:background="@drawable/button_shape"
-        android:fontFamily="@font/inter_bold"
         android:text="Coba Lagi"
+        android:fontFamily="@font/inter_bold"
         tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="368dp"
-        android:onClick="backHomeActivity"/>
+        tools:layout_editor_absoluteY="368dp" />
 
 </RelativeLayout>

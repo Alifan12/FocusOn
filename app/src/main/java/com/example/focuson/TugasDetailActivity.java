@@ -3,12 +3,14 @@ package com.example.focuson;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.focuson.database.Tugas;
@@ -24,6 +26,7 @@ public class TugasDetailActivity extends AppCompatActivity {
     private Intent prevIntent;
     private int idTugas;
     private Tugas data;
+    private Button button2;
 
     private CountDownTimer countDownTimer;
 
@@ -66,8 +69,24 @@ public class TugasDetailActivity extends AppCompatActivity {
 //                TugasDetailActivity.this.finish();
 //            }
 //        });
+        button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog();
+            }
+        });
 
     }
+
+    public void openDialog(){
+        ExampleDialog exampleDialog = new ExampleDialog();
+        exampleDialog.show(getSupportFragmentManager(), "example dialog");
+
+    }
+
+
+
 
     private void updateCountDown(){
         int minutes = (int) (time_left / 1000) / 60;
