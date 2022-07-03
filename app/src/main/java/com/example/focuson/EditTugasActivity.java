@@ -5,14 +5,14 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 
 import com.example.focuson.database.TugasViewModel;
 
-public class TugasListActivity extends AppCompatActivity {
+public class EditTugasActivity extends AppCompatActivity {
+
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
     private static TugasViewModel tugasViewModel;
@@ -22,11 +22,11 @@ public class TugasListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_tugas_list);
+        setContentView(R.layout.activity_edit_tugas);
 
 
-        recyclerView = findViewById(R.id.rvTugas);
-        final AdapterTugas adapter = new AdapterTugas(this);
+        recyclerView = findViewById(R.id.rvEditTugas);
+        final AdapterEditTugas adapter = new AdapterEditTugas(this);
         recyclerView.setAdapter(adapter);
         linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -36,15 +36,11 @@ public class TugasListActivity extends AppCompatActivity {
         });
     }
 
+    public void openAddTugas(View view) {
 
-    public void backHomeActivity(View view) {
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
     }
 
-
-    public void openEditTugas(View view) {
-        Intent intent = new Intent(this, EditTugasActivity.class);
-        startActivity(intent);
+    public void backHomeActivity(View view) {
+        EditTugasActivity.this.finish();
     }
 }

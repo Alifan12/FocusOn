@@ -17,7 +17,7 @@ public class FailedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_failed);
     }
 
-    public void backHomeActivity(View view) {
+    public void backListActivity(View view) {
         Intent intent = new Intent(this, TugasListActivity.class);
         startActivity(intent);
     }
