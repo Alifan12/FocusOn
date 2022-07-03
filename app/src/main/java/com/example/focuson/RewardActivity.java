@@ -42,9 +42,9 @@ public class RewardActivity extends AppCompatActivity {
 
     void addData() {
         rewardArray = new ArrayList<>();
-        rewardArray.add(new Reward(R.drawable.sepatu, "Sepatu"));
-        rewardArray.add(new Reward(R.drawable.permen, "Permen"));
-        rewardArray.add(new Reward(R.drawable.baju, "Baju"));
+        rewardArray.add(new Reward("Sepatu", R.drawable.sepatu));
+        rewardArray.add(new Reward("Permen",R.drawable.permen));
+        rewardArray.add(new Reward("Baju", R.drawable.baju));
     }
 
     public void backHomeActivity(View view) {RewardActivity.this.finish();

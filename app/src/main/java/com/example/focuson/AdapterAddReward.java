@@ -31,9 +31,8 @@ public class AdapterAddReward extends RecyclerView.Adapter<AdapterAddReward.AddR
 
     @Override
     public void onBindViewHolder(@NonNull AdapterAddReward.AddRewardViewHolder holder, int position) {
-
-        holder.pictReward.setImageResource(dataList.get(position).getPhotoReward());
-        holder.nameReward.setText(dataList.get(position).getNamaReward());
+        holder.pictReward.setImageResource(dataList.get(position).getImage());
+        holder.nameReward.setText(dataList.get(position).getName());
     }
 
     @Override
