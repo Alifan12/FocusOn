@@ -51,7 +51,7 @@ public abstract class FocusOnRoomDatabase extends RoomDatabase {
 
         private final TugasDAO mTugasDao;
         private static String [] namaTugas = {"Tugas Menggambar", "Menonton TV", "Tugas Mewarnai", "Mengikat Sepatu"};
-        private static Integer [] durasi = {1800, 600, 1800, 600};
+        private static Integer [] durasi = {10, 600, 1800, 600};
 
         PopulateDbAsync(FocusOnRoomDatabase db) {
             mTugasDao = db.tugasDao();

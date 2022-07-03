@@ -2,6 +2,7 @@ package com.example.focuson;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -16,6 +17,8 @@ public class FailedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_failed);
     }
 
-    public void backHomeActivity(View view) {FailedActivity.this.finish();
+    public void backHomeActivity(View view) {
+        Intent intent = new Intent(this, TugasListActivity.class);
+        startActivity(intent);
     }
 }

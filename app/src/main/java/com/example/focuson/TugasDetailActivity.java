@@ -53,7 +53,7 @@ public class TugasDetailActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-
+                time_left = 0;
             }
         }.start();
 
@@ -80,10 +80,10 @@ public class TugasDetailActivity extends AppCompatActivity {
     public void backHomeActivity(View view) {TugasDetailActivity.this.finish();}
 
     public void openSuksesTugas(View view) {
-        if(time_left < 0){
+        if(time_left <= 0){
             prevIntent = new Intent(this, SuksesActivity.class);
             startActivity(prevIntent);
-        }else if(time_left >= 0){
+        }else if(time_left > 0){
             prevIntent = new Intent(this, FailedActivity.class);
             startActivity(prevIntent);
         }

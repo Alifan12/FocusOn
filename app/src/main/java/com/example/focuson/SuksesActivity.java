@@ -2,6 +2,7 @@ package com.example.focuson;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -17,6 +18,12 @@ public class SuksesActivity extends AppCompatActivity {
     }
 
     public void backHomeActivity(View view) {
+        Intent intent = new Intent(this, TugasListActivity.class);
+        startActivity(intent);
+    }
 
+    public void openListReward(View view){
+        Intent intent = new Intent(this, RewardListActivity.class);
+        startActivity(intent);
     }
 }
